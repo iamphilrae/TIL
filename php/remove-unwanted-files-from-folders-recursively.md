@@ -14,7 +14,7 @@ public static function remove_unwanted_files_recursive(string $path, array $unwa
     foreach( glob($path . DIRECTORY_SEPARATOR . "{*,.[!.]*,..?*}", GLOB_BRACE) as $sub_path )
     {
         if( is_dir($sub_path) ) {
-            self::remove_unwanted_files_recursive($sub_path, $unwanted_list);
+            self::remove_unwanted_files_from_sub_folders( $sub_path, $unwanted_list );
         }
         else if( in_array( basename($sub_path), $unwanted_list ) ) {
             unlink($sub_path);
