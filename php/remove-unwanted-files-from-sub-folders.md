@@ -13,11 +13,11 @@ public static function remove_unwanted_files_from_sub_folders(string $path, arra
 {
     foreach( glob($path . DIRECTORY_SEPARATOR . "{*,.[!.]*,..?*}", GLOB_BRACE) as $sub_path )
     {
-        if( is_dir($sub_path) )
+        if( is_dir($sub_path) ) {
             self::remove_unwanted_files_from_sub_folders( $sub_path, $unwanted_list );
-
+		}
         else if( in_array( basename($sub_path), $unwanted_list ) ) {
-            Log::debug('Deleting: ' . $sub_path );
+            // error_log('Deleting: ' . $sub_path );
             unlink($sub_path);
         }
     }
