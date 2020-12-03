@@ -28,6 +28,12 @@ s3_profile="AWS"
 #s3_endpoint="https://s3.eu.cloud-object-storage.appdomain.cloud"
 #s3_profile="IBM"
 
+## Google Cloud
+#
+#s3_endpoint="https://storage.googleapis.com"
+#s3_profile="GCP"
+
+
 
 ### EDIT BELOW
 
